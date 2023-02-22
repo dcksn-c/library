@@ -1,0 +1,68 @@
+* > div {
+    border: 1px solid black;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-container {
+    border: 1px solid gray;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.hide {
+    display: none;
+}
+
+label {
+    text-align: center;
+}
+input {
+    margin-bottom: 20px;
+}
+
+.library {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+p,
+h2 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.read-status {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.read {
+    background-color: greenyellow;
+}
+
+.unread {
+    background-color: palevioletred;
+}
+
+.remove-btn {
+    margin-top: 10px;
+}
