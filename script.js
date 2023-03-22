@@ -120,7 +120,7 @@ class Book {
             bookCard.innerHTML = `
             <h2>${book.title}</h2>
             <p>${book.author}</p>
-            <p>${book.pages} pages</p>
+            <p>${book.pages.length > 1 ? `${book.pages} pages` : `${book.pages} page`}</p>
             <div class="read-status">${book.read ? "Read" : "Not Read Yet"}</div>
             <button class="toggle-btn" onclick="newBook.toggleRead(${i})">Read Status</button>
             <button class="remove-btn" onclick="newBook.removeBook(${i})">Remove Book</button>
@@ -151,6 +151,16 @@ document.querySelector("#book-form").addEventListener("submit", function(event) 
     newBook.addBookToLibrary();
 });
 
+const constraint = new RegExp("^([^0-9]*)$", "");
+const authorField = document.querySelector("#author");
 
-
+authorField.addEventListener("input", () => {
+    if (constraint.test(authorField.value)) {
+        console.log("hi")
+        authorField.setCustomValidity("");
+    }
+    else {
+        authorField.setCustomValidity("Numbers are not allowed in names")
+    }
+})
 
